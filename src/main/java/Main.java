@@ -190,6 +190,8 @@ public class Main {
     //==================================================================================================
 
     private Connection conn = null;
+    private BufferedWriter pbw2 = null;
+    private BufferedReader pbr2 = null;
 
     private void test17() throws SQLException {
         try{
@@ -205,6 +207,28 @@ public class Main {
         }
     }
 
+    private void test18() throws SQLException, IOException {
+        try{
+            pbw2 = new BufferedWriter(new FileWriter("test.txt"));
+            pbw2.write("Hello World");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            closeBufferedWriter();
+        }
+    }
+
+    private void test19() throws SQLException, IOException {
+        try{
+            pbr2 = new BufferedReader(new FileReader("test.txt"));
+            System.out.println(pbr2.readLine());
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            closeBufferedReader();
+        }
+    }
+
     //===================================================================================================
 
     private void closeOutputStream(BufferedWriter writer) throws IOException {
@@ -217,6 +241,14 @@ public class Main {
 
     private void closeConnection() throws SQLException {
         conn.close();
+    }
+
+    private void closeBufferedWriter() throws IOException {
+        pbw2.close();
+    }
+
+    private void closeBufferedReader() throws IOException {
+        pbr2.close();
     }
 
     //==================================================================================================
