@@ -1,4 +1,8 @@
 import java.io.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Main {
 
@@ -153,16 +157,6 @@ public class Main {
         }
     }
 
-    //===================================================================================================
-
-    private void closeOutputStream(BufferedWriter writer) throws IOException {
-        writer.close();
-    }
-
-    private void closeInputStream(BufferedReader reader) throws IOException {
-        reader.close();
-    }
-
     //==================================================================================================
 
     private void test15() throws IOException {
@@ -192,4 +186,38 @@ public class Main {
             closeOutputStream(pbw);
         }
     }
+
+    //==================================================================================================
+
+    private Connection conn = null;
+
+    private void test17() throws SQLException {
+        try{
+            conn = DriverManager.getConnection("demo connection");
+
+            conn.createStatement().executeUpdate("DELETE ...");
+            conn.createStatement().executeUpdate("INSERT INTO ...");
+            conn.createStatement().executeUpdate("INSERT INTO ...");
+            conn.commit();
+        }
+        finally {
+            closeConnection();
+        }
+    }
+
+    //===================================================================================================
+
+    private void closeOutputStream(BufferedWriter writer) throws IOException {
+        writer.close();
+    }
+
+    private void closeInputStream(BufferedReader reader) throws IOException {
+        reader.close();
+    }
+
+    private void closeConnection() throws SQLException {
+        conn.close();
+    }
+
+    //==================================================================================================
 }
