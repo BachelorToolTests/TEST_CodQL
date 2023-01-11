@@ -57,12 +57,12 @@ public class Main {
     //===========================================================================
 
     private void test6() throws IOException {
-        BufferedReader br = new BufferedReader(new FileWriter("test.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("test.txt"));
         System.out.println(br.readLine());
     }
 
     private void test7() throws IOException {
-        BufferedReader br = new BufferedReader(new FileWriter("test.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("test.txt"));
         System.out.println(br.readLine());
         br.close();
     }
@@ -70,7 +70,7 @@ public class Main {
     private void test8() throws IOException {
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new FileWriter("test.txt"));
+            br = new BufferedReader(new FileReader("test.txt"));
             System.out.println(br.readLine());
         }
         catch (Exception e) { }
@@ -79,7 +79,7 @@ public class Main {
     private void test9() throws IOException {
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new FileWriter("test.txt"));
+            br = new BufferedReader(new FileReader("test.txt"));
             System.out.println(br.readLine());
         }
         catch (Exception e) { }
@@ -91,7 +91,7 @@ public class Main {
     private void test10() throws IOException {
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new FileWriter("test.txt"));
+            br = new BufferedReader(new FileReader("test.txt"));
             System.out.println(br.readLine());
         }
         catch (Exception e) { }
