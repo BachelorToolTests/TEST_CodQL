@@ -54,6 +54,18 @@ public class Main {
         }
     }
 
+    private void test11() throws IOException {
+        BufferedWriter bw = null;
+        try {
+            bw = new BufferedWriter(new FileWriter("test.txt"));
+            bw.write("Hello World");
+        }
+        catch (Exception e) { }
+        finally {
+            closeOutputStream(bw);
+        }
+    }
+
     //===========================================================================
 
     private void test6() throws IOException {
@@ -102,5 +114,25 @@ public class Main {
                 }
             } catch(Exception e){}
         }
+    }
+
+    private void test12() throws IOException {
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader("test.txt"));
+            System.out.println(br.readLine());
+        }
+        catch (Exception e) { }
+        finally {
+            closeInputStream(br);
+        }
+    }
+
+    private void closeOutputStream(BufferedWriter writer) throws IOException {
+        writer.close();
+    }
+
+    private void closeInputStream(BufferedReader reader) throws IOException {
+        reader.close();
     }
 }
