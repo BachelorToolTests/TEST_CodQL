@@ -153,11 +153,43 @@ public class Main {
         }
     }
 
+    //===================================================================================================
+
     private void closeOutputStream(BufferedWriter writer) throws IOException {
         writer.close();
     }
 
     private void closeInputStream(BufferedReader reader) throws IOException {
         reader.close();
+    }
+
+    //==================================================================================================
+
+    private void test15() throws IOException {
+        try {
+            try {
+                pbr = new BufferedReader(new FileReader("test.txt"));
+                System.out.println(pbr.readLine());
+            }
+            catch(Exception e) {}
+        }
+        catch (Exception e) { }
+        finally {
+            closeInputStream(pbr);
+        }
+    }
+
+    private void test16() throws IOException {
+        try {
+            try {
+                pbw = new BufferedWriter(new FileWriter("test.txt"));
+                pbw.write("Hello World");
+            }
+            catch (Exception e) { }
+        }
+        catch (Exception e) { }
+        finally {
+            closeOutputStream(pbw);
+        }
     }
 }
