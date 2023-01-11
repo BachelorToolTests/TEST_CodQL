@@ -57,48 +57,48 @@ public class Main {
     //===========================================================================
 
     private void test6() throws IOException {
-        BufferedWriter bw = new BufferedWriter(new FileWriter("test.txt"));
-        bw.write("Hello World");
+        BufferedReader br = new BufferedReader(new FileWriter("test.txt"));
+        System.out.println(br.readLine());
     }
 
     private void test7() throws IOException {
-        BufferedWriter bw = new BufferedWriter(new FileWriter("test.txt"));
-        bw.write("Hello World");
-        bw.close();
+        BufferedReader br = new BufferedReader(new FileWriter("test.txt"));
+        System.out.println(br.readLine());
+        br.close();
     }
 
     private void test8() throws IOException {
-        BufferedWriter bw = null;
+        BufferedReader br = null;
         try {
-            bw = new BufferedWriter(new FileWriter("test.txt"));
-            bw.write("Hello World");
+            br = new BufferedReader(new FileWriter("test.txt"));
+            System.out.println(br.readLine());
         }
         catch (Exception e) { }
     }
 
     private void test9() throws IOException {
-        BufferedWriter bw = null;
+        BufferedReader br = null;
         try {
-            bw = new BufferedWriter(new FileWriter("test.txt"));
-            bw.write("Hello World");
+            br = new BufferedReader(new FileWriter("test.txt"));
+            System.out.println(br.readLine());
         }
         catch (Exception e) { }
         finally {
-            bw.close();
+            br.close();
         }
     }
 
     private void test10() throws IOException {
-        BufferedWriter bw = null;
+        BufferedReader br = null;
         try {
-            bw = new BufferedWriter(new FileWriter("test.txt"));
-            bw.write("Hello World");
+            br = new BufferedReader(new FileWriter("test.txt"));
+            System.out.println(br.readLine());
         }
         catch (Exception e) { }
         finally {
             try{
-                if(bw != null) {
-                    bw.close();
+                if(br != null) {
+                    br.close();
                 }
             } catch(Exception e){}
         }
