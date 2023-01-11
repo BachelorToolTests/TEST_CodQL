@@ -2,6 +2,9 @@ import java.io.*;
 
 public class Main {
 
+    private BufferedWriter pbw = null;
+    private BufferedReader pbr = null;
+
     public static void main(String[] args) {
 
     }
@@ -54,7 +57,7 @@ public class Main {
         }
     }
 
-    private void test11() throws IOException {
+    private void test6() throws IOException {
         BufferedWriter bw = null;
         try {
             bw = new BufferedWriter(new FileWriter("test.txt"));
@@ -66,20 +69,31 @@ public class Main {
         }
     }
 
+    private void test7() throws IOException {
+        try {
+            pbw = new BufferedWriter(new FileWriter("test.txt"));
+            pbw.write("Hello World");
+        }
+        catch (Exception e) { }
+        finally {
+            closeOutputStream(pbw);
+        }
+    }
+
     //===========================================================================
 
-    private void test6() throws IOException {
+    private void test8() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("test.txt"));
         System.out.println(br.readLine());
     }
 
-    private void test7() throws IOException {
+    private void test9() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("test.txt"));
         System.out.println(br.readLine());
         br.close();
     }
 
-    private void test8() throws IOException {
+    private void test10() throws IOException {
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader("test.txt"));
@@ -88,7 +102,7 @@ public class Main {
         catch (Exception e) { }
     }
 
-    private void test9() throws IOException {
+    private void test11() throws IOException {
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader("test.txt"));
@@ -100,7 +114,7 @@ public class Main {
         }
     }
 
-    private void test10() throws IOException {
+    private void test12() throws IOException {
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader("test.txt"));
@@ -116,7 +130,7 @@ public class Main {
         }
     }
 
-    private void test12() throws IOException {
+    private void test13() throws IOException {
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader("test.txt"));
@@ -125,6 +139,17 @@ public class Main {
         catch (Exception e) { }
         finally {
             closeInputStream(br);
+        }
+    }
+
+    private void test14() throws IOException {
+        try {
+            pbr = new BufferedReader(new FileReader("test.txt"));
+            System.out.println(pbr.readLine());
+        }
+        catch (Exception e) { }
+        finally {
+            closeInputStream(pbr);
         }
     }
 
