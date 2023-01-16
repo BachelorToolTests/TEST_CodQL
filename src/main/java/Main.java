@@ -300,4 +300,12 @@ public class Main {
             fileStream.close();
         }
     }
+
+    private static void test23() {
+        try{
+            BufferedReader br = new BufferedReader(new FileReader("test"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }
