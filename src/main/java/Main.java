@@ -6,25 +6,48 @@ import java.sql.SQLException;
 
 public class Main {
 
-    private BufferedWriter pbw = null;
-    private BufferedReader pbr = null;
+    private static BufferedWriter pbw = null;
+    private static BufferedReader pbr = null;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, SQLException {
+        File file = new File("testPath");
 
+        test1();
+        test2();
+        test3();
+        test4();
+        test5();
+        test6();
+        test7();
+        test8();
+        test9();
+        test10();
+        test11();
+        test12();
+        test13();
+        test14();
+        test15();
+        test16();
+        test17();
+        test18();
+        test19();
+        test20(file);
+        test21(file);
+        test22(file);
     }
 
-    private void test1() throws IOException {
+    private static void test1() throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter("test.txt"));
         bw.write("Hello World");
     }
 
-    private void test2() throws IOException {
+    private static void test2() throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter("test.txt"));
         bw.write("Hello World");
         bw.close();
     }
 
-    private void test3() throws IOException {
+    private static void test3() throws IOException {
         BufferedWriter bw = null;
         try {
             bw = new BufferedWriter(new FileWriter("test.txt"));
@@ -33,7 +56,7 @@ public class Main {
         catch (Exception e) { }
     }
 
-    private void test4() throws IOException {
+    private static void test4() throws IOException {
         BufferedWriter bw = null;
         try {
             bw = new BufferedWriter(new FileWriter("test.txt"));
@@ -45,7 +68,7 @@ public class Main {
         }
     }
 
-    private void test5() throws IOException {
+    private static void test5() throws IOException {
         BufferedWriter bw = null;
         try {
             bw = new BufferedWriter(new FileWriter("test.txt"));
@@ -61,7 +84,7 @@ public class Main {
         }
     }
 
-    private void test6() throws IOException {
+    private static void test6() throws IOException {
         BufferedWriter bw = null;
         try {
             bw = new BufferedWriter(new FileWriter("test.txt"));
@@ -73,7 +96,7 @@ public class Main {
         }
     }
 
-    private void test7() throws IOException {
+    private static void test7() throws IOException {
         try {
             pbw = new BufferedWriter(new FileWriter("test.txt"));
             pbw.write("Hello World");
@@ -86,18 +109,18 @@ public class Main {
 
     //===========================================================================
 
-    private void test8() throws IOException {
+    private static void test8() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("test.txt"));
         System.out.println(br.readLine());
     }
 
-    private void test9() throws IOException {
+    private static void test9() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("test.txt"));
         System.out.println(br.readLine());
         br.close();
     }
 
-    private void test10() throws IOException {
+    private static void test10() throws IOException {
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader("test.txt"));
@@ -106,7 +129,7 @@ public class Main {
         catch (Exception e) { }
     }
 
-    private void test11() throws IOException {
+    private static void test11() throws IOException {
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader("test.txt"));
@@ -118,7 +141,7 @@ public class Main {
         }
     }
 
-    private void test12() throws IOException {
+    private static void test12() throws IOException {
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader("test.txt"));
@@ -134,7 +157,7 @@ public class Main {
         }
     }
 
-    private void test13() throws IOException {
+    private static void test13() throws IOException {
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader("test.txt"));
@@ -146,7 +169,7 @@ public class Main {
         }
     }
 
-    private void test14() throws IOException {
+    private static void test14() throws IOException {
         try {
             pbr = new BufferedReader(new FileReader("test.txt"));
             System.out.println(pbr.readLine());
@@ -159,7 +182,7 @@ public class Main {
 
     //==================================================================================================
 
-    private void test15() throws IOException {
+    private static void test15() throws IOException {
         try {
             try {
                 pbr = new BufferedReader(new FileReader("test.txt"));
@@ -173,7 +196,7 @@ public class Main {
         }
     }
 
-    private void test16() throws IOException {
+    private static void test16() throws IOException {
         try {
             try {
                 pbw = new BufferedWriter(new FileWriter("test.txt"));
@@ -189,11 +212,11 @@ public class Main {
 
     //==================================================================================================
 
-    private Connection conn = null;
-    private BufferedWriter pbw2 = null;
-    private BufferedReader pbr2 = null;
+    private static Connection conn = null;
+    private static BufferedWriter pbw2 = null;
+    private static BufferedReader pbr2 = null;
 
-    private void test17() throws SQLException {
+    private static void test17() throws SQLException {
         try{
             conn = DriverManager.getConnection("demo connection");
 
@@ -207,7 +230,7 @@ public class Main {
         }
     }
 
-    private void test18() throws SQLException, IOException {
+    private static void test18() throws SQLException, IOException {
         try{
             pbw2 = new BufferedWriter(new FileWriter("test.txt"));
             pbw2.write("Hello World");
@@ -218,7 +241,7 @@ public class Main {
         }
     }
 
-    private void test19() throws SQLException, IOException {
+    private static void test19() throws SQLException, IOException {
         try{
             pbr2 = new BufferedReader(new FileReader("test.txt"));
             System.out.println(pbr2.readLine());
@@ -231,34 +254,34 @@ public class Main {
 
     //===================================================================================================
 
-    private void closeOutputStream(BufferedWriter writer) throws IOException {
+    private static void closeOutputStream(BufferedWriter writer) throws IOException {
         writer.close();
     }
 
-    private void closeInputStream(BufferedReader reader) throws IOException {
+    private static void closeInputStream(BufferedReader reader) throws IOException {
         reader.close();
     }
 
-    private void closeConnection() throws SQLException {
+    private static void closeConnection() throws SQLException {
         conn.close();
     }
 
-    private void closeBufferedWriter() throws IOException {
+    private static void closeBufferedWriter() throws IOException {
         pbw2.close();
     }
 
-    private void closeBufferedReader() throws IOException {
+    private static void closeBufferedReader() throws IOException {
         pbr2.close();
     }
 
     //==================================================================================================
     
-    private void test20(File file) throws IOException {
+    private static void test20(File file) throws IOException {
         FileInputStream fileStream = new FileInputStream(file);
         int i = fileStream.read();
     }
 
-    private void test21(File file) throws IOException {
+    private static void test21(File file) throws IOException {
         FileInputStream fileStream = null;
         try {
             fileStream = new FileInputStream(file);
@@ -267,7 +290,7 @@ public class Main {
         catch (Exception e) { }
     }
 
-    private void test22(File file) throws IOException {
+    private static void test22(File file) throws IOException {
         FileInputStream fileStream = null;
         try {
             fileStream = new FileInputStream(file);
