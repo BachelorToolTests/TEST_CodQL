@@ -252,4 +252,29 @@ public class Main {
     }
 
     //==================================================================================================
+    
+    private void test20(File file) throws IOException {
+        FileInputStream fileStream = new FileInputStream(file);
+        int i = fileStream.read();
+    }
+
+    private void test21(File file) throws IOException {
+        FileInputStream fileStream = null;
+        try {
+            fileStream = new FileInputStream(file);
+            int i = fileStream.read();
+        }
+        catch (Exception e) { }
+    }
+
+    private void test22(File file) throws IOException {
+        FileInputStream fileStream = null;
+        try {
+            fileStream = new FileInputStream(file);
+            int i = fileStream.read();
+        }
+        catch (Exception e) {
+            fileStream.close();
+        }
+    }
 }
